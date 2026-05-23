@@ -1,0 +1,85 @@
+Javascript execution context
+[{}]-> Global execution context <- this
+
+
+-> Global execution context
+-> Function execution context
+-> Eval execution context 
+
+[{js code}] -> Memory creation phase
+            -> execution phase
+
+
+By this code we see how phase works
+let val1 = 10
+let val2 = 5
+function addnum(num1,num2){
+    let total = num1 + num2
+    return total
+}
+let result1 = addnum(val1,val2)
+let result2 = addnum(10,2)
+
+
+1-> Global execution -> this
+2-> Memory phase 
+val1-> undefined 
+val2 -> undefined
+addnum-> definition
+result1-> undefined
+result2-> undefined
+
+3-> execution phase
+val1-> 10
+val2-> 5
+addnum -> new variable envoirment + Execution thread
+
+
+add num k liye again memory and execution phase alag se run hoga
+in memory phase -> val1,val2,total -> undefined
+in execution phase -> num1,num2 -> 10,5
+total-> 15
+// total retun to global execution context
+after result 1 the execution thread and all is deleted again go back to execution phase 3
+
+In result 2 again we rerun memory and executionphase
+same thing we do for this as result 1
+
+
+// call stack
+
+here lifo works last in first out
+function a() {
+    b();
+    console.log("A");
+}
+
+function b() {
+    c();
+    console.log("B");
+}
+
+function c() {
+    console.log("C");
+}
+
+a(); like this 
+
+Stack Flow ->
+
+Global
+a
+b
+c
+
+Then reverse removal:
+
+c removed
+b removed
+a removed
+
+Output:
+
+C
+B
+A
