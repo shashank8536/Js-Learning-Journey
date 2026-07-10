@@ -1,21 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DOM</title>
 </head>
+
 <body style="background-color: #212121; color: #fff;">
     <ul class="language">
         <li>JavaScript</li>
     </ul>
 </body>
 <script>
-    function addLanguage(langName){
-       const listItem = document.createElement('listItem')
-       listItem.innerHTML=`${langName}`
-       document.querySelector('.language').appendChild(listItem)
+    function addLanguage(langName) {
+        const listItem = document.createElement('listItem')
+        listItem.innerHTML = `${langName}`
+        document.querySelector('.language').appendChild(listItem)
     }
     addLanguage("Python");
+    // edit
+    const SecondLang = document.querySelector('listItem:nth-child(2)');
+    // SecondLang.innerHTML = "Mojo"
+    const newli = document.createElement('li')
+    newli.textContent = "Mojo"
+    SecondLang.replaceWith(newli);
+
+    // or use outerhtml directly
+
+    //for remove 
+    const lastLang = document.querySelector('listItem:last-child')
+    lastLang.remove()
 </script>
+
 </html>
