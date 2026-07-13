@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Html Events</title>
+</head>
+
+<body>
+    <h2>Amazing Image</h2>
+    <div>
+        <ul id="images">
+            <li><img width="200px" id="photoShop"
+                    src="https://images.pexels.com/photos/37972193/pexels-photo-37972193.jpeg" alt="photoShop">
+            </li>
+            <li id="google" href="https://google.com">
+                google
+            </li>
+        </ul>
+    </div>
+</body>
+<script>
+    // document.getElementById('photoShop').addEventListener('click', function () {
+    //     alert('owl clicked agian') 
+    // })
+    // document.getElementById('google').addEventListener('click',function(e){
+    //     e.preventDefault();
+    //     e.stopPropagation()
+    //     console.log("google clicked");
+    // },false)
+
+    document.querySelector('#images').addEventListener('click',function(e){
+        console.log(e.target.parentNode);
+        let removeit = e.target.parentNode
+        removeit.remove()
+        // removeit.parentNode.removeChild(removeit);
+        
+    },false)
+</script>  
+
+</html>
