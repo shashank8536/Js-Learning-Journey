@@ -5,13 +5,13 @@
 const mySym = Symbol("key1")
 
 const jsUser = {
-    name:"Shashank",
-    "Full name" : "Shashank Shekhar",
-    [mySym] : "Mykey1", // symbol ki trah use krna hai to swuare bracket
-    age:18,
-    location:"Mathura",
-    email:"Shashankshekhargiri2003@gmail.com",
-    isLoggedIn:false
+    name: "Shashank",
+    "Full name": "Shashank Shekhar",
+    [mySym]: "Mykey1", // symbol ki trah use krna hai to sq uare bracket
+    age: 18,
+    location: "Mathura",
+    email: "Shashankshekhargiri2003@gmail.com",
+    isLoggedIn: false
 }
 
 // console.log(jsUser.email)
@@ -26,7 +26,7 @@ const jsUser = {
 // jsUser.email = "shashankgiri@microsoft.com"
 // console.log(jsUser)
 
-jsUser.greeting = function() {
+jsUser.greeting = function () {
     console.log("Hello js user")  // o/p undefined
 }
 
